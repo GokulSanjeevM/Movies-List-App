@@ -111,7 +111,10 @@ function addMovieListItemEventListeners(listItem, movie, id) {
   const updateButton = listItem.querySelector(".update-button");
   updateButton.addEventListener("click", function () {
     // Open the update form in a new page
-    window.open("../Html/update.html?movieId=" + movie.id, "_blank");
+    window.open(
+      "/Movies-List-App/Html/update.html?movieId=" + movie.id,
+      "_blank"
+    );
   });
 
   const deleteButton = listItem.querySelector(".delete-button");
@@ -124,7 +127,10 @@ function addMovieListItemEventListeners(listItem, movie, id) {
   const viewButton = listItem.querySelector(".view-button");
   viewButton.addEventListener("click", function () {
     const movieData = JSON.stringify(movie);
-    window.open("../Html/view.html?movieId=" + movie.id, "_blank");
+    window.open(
+      "/Movies-List-App/Html/view.html?movieId=" + movie.id,
+      "_blank"
+    );
   });
 }
 

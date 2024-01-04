@@ -1,0 +1,103 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    background: rgb(24, 0, 36);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(./image/BG-img.jpg);
+    background-size: cover;
+}
+
+#head {
+    text-align: center;
+    color: white;
+}
+
+
+
+.nav-bars {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+/* #form-container {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+} */
+
+/* .show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+} */
+
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* #movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.movie {
+    flex: 1;
+    margin: 10px;
+    border: 1px solid #ddd;
+} */
+
+#movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    list-style: none;
+    padding: 15px;
+}
+
+.movie {
+    border: 1px solid #ddd;
+    align-items: center;
+    padding: 15px;
+
+}
+
+.view-button,
+.update-button,
+.delete-button {
+    margin-right: 10px;
+}
+
+.movie h3 {
+    color: white;
+}
+
+.movie p {
+    color: #ddd;
+}
+
+.movie {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.release-year {
+    margin: 0;
+}

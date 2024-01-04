@@ -1,0 +1,32 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    background: rgb(24, 0, 36);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../image/BG-img.jpg);
+    background-size: cover;
+}
+
+/* #movie-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+} */
+
+.card {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8))
+}
+
+.text-light {
+    color: #171515;
+}
+
+h2 {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+}

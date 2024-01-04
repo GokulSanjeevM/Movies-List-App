@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List App</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap');
+    </style>
+</head>
+<link rel="stylesheet">
+
+<body>
+    <h1 id="head">Movies List</h1>
+    <div class="nav-bars">
+        <button type="button" id="add-movies" class="btn btn-outline-light" data-bs-toggle="modal"
+            data-bs-target="#movieModal">
+            Add Movie
+        </button>
+        <button type="button" id="add-multiple-movies" class="btn btn-outline-light" data-bs-toggle="modal"
+            data-bs-target="#movieModal">Add Multiple Movies</button>
+        <!-- <input type="search" name="search" id="search-movies"> -->
+    </div>
+    <div id="form-container" class="hidden">
+        <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="movieModalLabel">Add Movie</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="movie-form row">
+                            <div id="movieid"></div>
+                            <div class="d-flex align-items-center m-2">
+                                <div class="col-4">
+                                    <label for="movie-image" class="form-label me-3">Movie Image URL:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="url" id="movie-image" name="movieImage" required class="form-control">
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center m-2">
+                                <div class="col-4">
+                                    <label for="movie-name" class="form-label me-3">Movie Name:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="movie-name" name="movieName" required class="form-control">
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center m-2">
+                                <div class="col-4">
+                                    <label for="release-year" class="form-label me-3">Released Year:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="number" id="release-year" name="releaseYear" min="1900" max="2099"
+                                        required class="form-control">
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center m-2">
+                                <div class="col-4">
+                                    <label for="movie-genre" class="form-label me-3">Genre:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="movie-genre" name="genre" required class="form-control">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="submit-button" class="btn btn-outline-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul id="movie-list"></ul>
+
+    <script src="./singlemovie.js"></script>
+    <script src="./multiplemovie.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

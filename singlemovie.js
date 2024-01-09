@@ -7,6 +7,56 @@ const movieList = document.getElementById("movie-list");
 const submitButton = document.getElementById("submit-button");
 
 let movieCounter = 0;
+let movies = [
+  {
+    name: "Maaveeran",
+    releaseYear: "2023",
+    image:
+      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcStM3HLQyCkcRrXD8hGHmg62nWo4aE8vqBZY6ayWqBGR97-6jnX",
+    genre: "Action/Thriller",
+    id: "movie_0",
+  },
+  {
+    name: "Rangoli",
+    releaseYear: "2023",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Rangoli2023tamil.jpg/220px-Rangoli2023tamil.jpg",
+    genre: "Drama",
+    id: "movie_1",
+  },
+  {
+    name: "Pathu Thala",
+    releaseYear: "2023",
+    image:
+      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRWyv6EJDOnAQ_iq2rtrEna3IvLP3VRXijbqxj8tkIW-lcpkdXr",
+    genre: "Action/Thriller",
+    id: "movie_2",
+  },
+  {
+    name: "Paramporul",
+    releaseYear: "2023",
+    image:
+      "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTk6_XrMHFddBbQ2LAJ-B82jvZNB-Dlweg35EFVOcM3NEke0SHi",
+    genre: "Thriller/Action",
+    id: "movie_3",
+  },
+  {
+    name: "Oh Manapenne!",
+    releaseYear: "2021",
+    image:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSV83ZYfoInT8GRg3UdXkmA6ikHMHxcXLcPxFWcjdhQvLlYMUnr",
+    genre: "Romance/Comedy",
+    id: "movie_4",
+  },
+  {
+    name: "Good Night",
+    releaseYear: "2023",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvl7V6ax8GDRCv8GiT3NFxepjOFS-b8vdYR2PHv3PRD-c-SH_Q",
+    genre: "Comedy/Romance",
+    id: "movie_5",
+  },
+];
 
 // Submit form to add movie
 submitButton.addEventListener("click", function (event) {
@@ -31,7 +81,7 @@ submitButton.addEventListener("click", function (event) {
   addMovieToList(movie);
 
   // Get existing movies from local storage
-  let movies = [];
+
   const moviesString = localStorage.getItem(MOVIES_KEY);
   //console.log("moviesString", moviesString);
   if (moviesString) {
@@ -136,12 +186,16 @@ function addMovieListItemEventListeners(listItem, movie, id) {
 
 // Load movies from local storage on page load
 window.addEventListener("load", function () {
-  const moviesString = localStorage.getItem(MOVIES_KEY);
-
+  let moviesString = localStorage.getItem(MOVIES_KEY) || movies;
+  if (!localStorage.getItem(MOVIES_KEY))
+    moviesString = JSON.stringify(moviesString);
+  //console.log("moviesString", moviesString);
   if (moviesString) {
     const movies = JSON.parse(moviesString);
+    //console.log("movies", movies);
     for (const movie of movies) {
       addMovieToList(movie);
+      //console.log("movie", movie);
     }
   }
 });
